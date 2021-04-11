@@ -215,53 +215,12 @@ public class formOwner extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        kon =koneksi.koneksiDb();
-        int confirm = JOptionPane.showConfirmDialog(null, "Cek Data Status?", "Cek", JOptionPane.YES_NO_CANCEL_OPTION);
-        if (confirm == JOptionPane.YES_OPTION) {
-            
-            try {
-
-  String path="src/laporan/dataCuci.jasper";      // letak penyimpanan report
-
-  HashMap parameter = new HashMap();
-  
-  JasperPrint print = JasperFillManager.fillReport(path,parameter,kon);
-
-  JasperViewer.viewReport(print, false);
-
-    } catch (Exception ex) {
-
-  JOptionPane.showMessageDialog(rootPane,"Dokumen Tidak Ada "+ex);
-
-    }
-            dispose();
-        }else{ JOptionPane.showMessageDialog(null,"");}
+        new laporanCuci().setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-        kon =koneksi.koneksiDb();
-        int confirm = JOptionPane.showConfirmDialog(null, "Cek Data Transaksi?", "Cetak", JOptionPane.YES_NO_CANCEL_OPTION);
-        if (confirm == JOptionPane.YES_OPTION) {
-            
-            try {
-
-  String path="src/laporan/dataTransaksi.jasper";      // letak penyimpanan report
-
-  HashMap parameter = new HashMap();
-  
-  JasperPrint print = JasperFillManager.fillReport(path,parameter,kon);
-
-  JasperViewer.viewReport(print, false);
-
-    } catch (Exception ex) {
-
-  JOptionPane.showMessageDialog(rootPane,"Dokumen Tidak Ada "+ex);
-
-    }
-            dispose();
-        }else{ JOptionPane.showMessageDialog(null,"");}
-        
+        new laporanTr().setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -271,7 +230,7 @@ public class formOwner extends javax.swing.JFrame {
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
-        int confirm=JOptionPane.showConfirmDialog(null,"Cetak data Penerimaan?","Cetak", JOptionPane.YES_NO_CANCEL_OPTION);
+        int confirm=JOptionPane.showConfirmDialog(null,"Cek data Penerimaan?","Cetak", JOptionPane.YES_NO_CANCEL_OPTION);
         if (confirm== JOptionPane.YES_OPTION ){
         kon =koneksi.koneksiDb();
         try {
